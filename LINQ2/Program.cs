@@ -119,6 +119,17 @@ namespace LINQ2
             Product firstExpensiveProduct = Source.ProductList
     .First(p => p.UnitPrice > 50);
             Console.WriteLine(firstExpensiveProduct.ProductName + " - " + firstExpensiveProduct.UnitPrice);
+            // Q17
+            var productOver500 = Source.ProductList
+                .FirstOrDefault(p => p.UnitPrice > 500);
+            if (productOver500 != null)
+            {
+                Console.WriteLine(productOver500.ProductName);
+            }
+            else
+            {
+                Console.WriteLine("null");
+            }
         }
     }
 }
