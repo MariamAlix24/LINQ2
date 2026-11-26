@@ -72,6 +72,15 @@ namespace LINQ2
             {
                 Console.WriteLine(category);
             }
+            // Q9
+            var customersByCountry = from c in Source.CustomerList
+                                     group c by c.Country into g
+                                     select new
+                                     {
+                                         Country = g.Key,
+                                         Count = g.Count(),
+                                         TotalOrderValue = g.SelectMany(c => c.Orders).Sum(o => o.Total)
+                                     };
         }
     }
 }
