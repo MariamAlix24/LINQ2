@@ -115,6 +115,10 @@ namespace LINQ2
            .ToDictionary(p => p.ProductID);
             Product product18 = productsById[18];
             Console.WriteLine(product18.ProductName + " - " + product18.UnitPrice);
+            // Q16
+            Product firstExpensiveProduct = Source.ProductList
+    .First(p => p.UnitPrice > 50);
+            Console.WriteLine(firstExpensiveProduct.ProductName + " - " + firstExpensiveProduct.UnitPrice);
         }
     }
 }
