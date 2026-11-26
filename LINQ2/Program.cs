@@ -40,6 +40,13 @@ namespace LINQ2
             int[] ids = { 3, 9, 13, 18 };
             var hasNine = ids.Contains(9);
             Console.WriteLine(hasNine);
+            //Q6
+            var groupedProducts = Source.ProductList
+            .GroupBy(p => p.Category);
+            foreach (var group in groupedProducts)
+            {
+                Console.WriteLine(group.Key + " - Count: " + group.Count());
+            }
         }
     }
 }
