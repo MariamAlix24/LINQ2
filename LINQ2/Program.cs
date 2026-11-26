@@ -158,6 +158,7 @@ namespace LINQ2
             var productCustomerPairs = Source.ProductList.Zip(
            Source.CustomerList,
           (prod, cust) => prod.ProductName + " sold to " + cust.CustomerName);
+
         }
     }
 }
