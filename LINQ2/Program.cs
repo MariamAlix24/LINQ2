@@ -145,6 +145,15 @@ namespace LINQ2
             {
                 Console.WriteLine(num);
             }
+            // Q20
+            var firstThreeAndCustomers = Source.ProductList
+                .Take(3)
+                .Select(p => p.ProductName)
+                .Concat(
+                    Source.CustomerList
+                    .Take(3)
+                    .Select(c => c.CustomerName)
+                );
         }
     }
 }
