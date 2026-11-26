@@ -14,6 +14,16 @@ namespace LINQ2
             {
                 Console.WriteLine($"Name: {product.ProductName}, Price: {product.UnitPrice}");
             }
+            //Q2
+            int pageSize = 5;
+            int pageNumber = 2;
+            var page2Products = Source.ProductList
+                .Skip((pageNumber - 1) * pageSize)
+                .Take(pageSize);
+            foreach (var product in page2Products)
+            {
+                Console.WriteLine(product.ProductName + " - " + product.UnitPrice);
+            }
         }
     }
 }
