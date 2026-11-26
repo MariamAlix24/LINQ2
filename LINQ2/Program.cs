@@ -36,6 +36,10 @@ namespace LINQ2
             var allSeafoodInStock = Source.ProductList
            .Where(p => p.Category == "Seafood")
            .All(p => p.UnitsInStock > 0);
+            //Q5
+            int[] ids = { 3, 9, 13, 18 };
+            var hasNine = ids.Contains(9);
+            Console.WriteLine(hasNine);
         }
     }
 }
