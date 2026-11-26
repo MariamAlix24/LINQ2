@@ -55,6 +55,14 @@ namespace LINQ2
                     Category = g.Key,
                     ProductNames = g.Select(p => p.ProductName)
                 });
+            foreach (var group in productsByCategory)
+            {
+                Console.WriteLine("Category: " + group.Category);
+                foreach (var name in group.ProductNames)
+                {
+                    Console.WriteLine("  - " + name);
+                }
+            }
         }
     }
 }
