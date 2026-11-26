@@ -130,6 +130,13 @@ namespace LINQ2
             {
                 Console.WriteLine("null");
             }
+            // Q18
+            var multTableOf7 = Enumerable.Range(1, 12)
+    .Select(i => 7 + " x " + i + " = " + (7 * i));
+            foreach (var row in multTableOf7)
+            {
+                Console.WriteLine(row);
+            }
         }
     }
 }
