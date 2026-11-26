@@ -81,6 +81,10 @@ namespace LINQ2
                                          Count = g.Count(),
                                          TotalOrderValue = g.SelectMany(c => c.Orders).Sum(o => o.Total)
                                      };
+            // Q10
+            var totalUnitsInStock = Source.ProductList
+           .Sum(p => p.UnitsInStock);
+
         }
     }
 }
