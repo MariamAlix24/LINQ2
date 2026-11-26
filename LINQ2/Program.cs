@@ -32,6 +32,10 @@ namespace LINQ2
             {
                 Console.WriteLine(product.ProductName + " - " + product.UnitPrice);
             }
+            //Q4
+            var allSeafoodInStock = Source.ProductList
+           .Where(p => p.Category == "Seafood")
+           .All(p => p.UnitsInStock > 0);
         }
     }
 }
