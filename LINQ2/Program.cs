@@ -63,6 +63,15 @@ namespace LINQ2
                     Console.WriteLine("  - " + name);
                 }
             }
+            // Q8
+            var categoriesWithMoreThan3 = Source.ProductList
+           .GroupBy(p => p.Category)
+          .Where(g => g.Count() > 3)
+          .Select(g => g.Key);
+            foreach (var category in categoriesWithMoreThan3)
+            {
+                Console.WriteLine(category);
+            }
         }
     }
 }
