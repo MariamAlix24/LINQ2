@@ -47,6 +47,14 @@ namespace LINQ2
             {
                 Console.WriteLine(group.Key + " - Count: " + group.Count());
             }
+            // Q7
+            var productsByCategory = Source.ProductList
+                .GroupBy(p => p.Category)
+                .Select(g => new
+                {
+                    Category = g.Key,
+                    ProductNames = g.Select(p => p.ProductName)
+                });
         }
     }
 }
