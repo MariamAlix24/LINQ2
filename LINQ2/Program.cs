@@ -84,7 +84,11 @@ namespace LINQ2
             // Q10
             var totalUnitsInStock = Source.ProductList
            .Sum(p => p.UnitsInStock);
-
+            // Q11
+            var cheapestPrice = Source.ProductList
+           .Min(p => p.UnitPrice);
+            var mostExpensivePrice = Source.ProductList
+                .Max(p => p.UnitPrice);
         }
     }
 }
