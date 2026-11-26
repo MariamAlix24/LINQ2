@@ -24,6 +24,14 @@ namespace LINQ2
             {
                 Console.WriteLine(product.ProductName + " - " + product.UnitPrice);
             }
+            //Q3
+            var cheapProducts = Source.ProductList
+           .OrderBy(p => p.UnitPrice)
+           .TakeWhile(p => p.UnitPrice < 25);
+            foreach (var product in cheapProducts)
+            {
+                Console.WriteLine(product.ProductName + " - " + product.UnitPrice);
+            }
         }
     }
 }
