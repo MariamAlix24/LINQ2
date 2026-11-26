@@ -89,6 +89,10 @@ namespace LINQ2
            .Min(p => p.UnitPrice);
             var mostExpensivePrice = Source.ProductList
                 .Max(p => p.UnitPrice);
+            // Q12
+            var distinctCategories = Source.ProductList
+           .Select(p => p.Category)
+            .Distinct();
         }
     }
 }
