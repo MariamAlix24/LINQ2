@@ -154,6 +154,10 @@ namespace LINQ2
                     .Take(3)
                     .Select(c => c.CustomerName)
                 );
+            // Q21
+            var productCustomerPairs = Source.ProductList.Zip(
+           Source.CustomerList,
+          (prod, cust) => prod.ProductName + " sold to " + cust.CustomerName);
         }
     }
 }
