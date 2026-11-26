@@ -1,4 +1,5 @@
 ﻿using LINQ.DataSources;
+using LINQ.Models;
 
 namespace LINQ2
 {
@@ -109,6 +110,11 @@ namespace LINQ2
             {
                 Console.WriteLine(country);
             }
+            // Q15
+            Dictionary<int, Product> productsById = Source.ProductList
+           .ToDictionary(p => p.ProductID);
+            Product product18 = productsById[18];
+            Console.WriteLine(product18.ProductName + " - " + product18.UnitPrice);
         }
     }
 }
