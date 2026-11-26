@@ -101,6 +101,14 @@ namespace LINQ2
             {
                 Console.WriteLine(id);
             }
+            // Q14
+            string[] list1 = { "Germany", "France", "UK", "Spain" };
+            string[] list2 = { "france", "SPAIN", "Italy" };
+            var countriesOnlyInList1 = list1.Except(list2, StringComparer.OrdinalIgnoreCase);
+            foreach (var country in countriesOnlyInList1)
+            {
+                Console.WriteLine(country);
+            }
         }
     }
 }
